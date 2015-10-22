@@ -1,0 +1,98 @@
+<html>
+<head>
+  <title>Introduce yourself for the EAT Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+
+  <link rel="stylesheet" href="//assets-cdn.ziggeo.com/css/ziggeo-v1.css" />
+  <script src="//assets-cdn.ziggeo.com/js/ziggeo-v1.js"></script>
+  <script>ZiggeoApi.token = "4afaff08a206010335585bae22ed3a28";</script>
+  <script>ZiggeoApi.Config.cdn = true;</script>
+  <script>ZiggeoApi.Config.webrtc = true;</script>
+  <script>ZiggeoApi.Config.resumable = true;</script>
+  <script>
+    ZiggeoApi.Events.on("submitted", function (data) {
+      console.log('Video ID ' + data.video.token + ' was uploaded and is currently being processed.');
+      document.getElementById("video").value = data.video.token;
+      document.getElementById('addsuccess').style.display="block";
+    });
+
+    $(window).resize(function(){
+      var z = document.getElementsByClassName('video-recorder-outer')[0];
+      var o = document.getElementById("video-recorder-view-cid_1");
+        z.style.height = document.getElementById("widget").offsetWidth/1.5;
+        z.style.width = document.getElementById("widget").offsetWidth;
+        o.style.height = document.getElementById("widget").offsetWidth/1.5;
+        o.style.width = document.getElementById("widget").offsetWidth;
+    });
+
+    function store(){
+      var form = document.forms[0];
+      if (!form.elements["name"].value || !form.elements["username"].value || !form.elements["location"].value || !form.elements["video"].value){
+        alert("Please fill out your name, Devpost username, location, and record a short video introducing yourself.");
+      } else {
+          var fb = new Firebase("https://glaring-inferno-8860.firebaseio.com/apps");
+
+          fb.push({'name' : form.elements["name"].value, 'username' : form.elements["username"].value, 'location' : form.elements["location"].value, 'video' : form.elements["video"].value, 'date': Firebase.ServerValue.TIMESTAMP});
+
+          console.log( form.elements["name"].value + " " +
+          form.elements["username"].value + " " +
+          form.elements["location"].value + " " +
+          form.elements["video"].value );
+
+          alert("Thanks! Once your video has been approved, You'll be able to see it on the wall @ http://foo.bar");
+          
+          document.getElementById('upload').style.display="none";
+          document.getElementById('wall').style.display="block";
+        }
+    }
+
+    function wall(){
+      window.location.href = "/wall.html";
+    }
+
+  </script>
+</head>
+<body>
+
+<div>
+<h2>Introduce yourself &amp; find a teammate</h2>
+</div>
+
+<div>
+  <form id = "form" class="pure-form pure-form-stacked">
+
+    <label for="name">What's your name?</label><br>
+    <input class="pure-input" name = "name" id="name" placeholder="Jon Show" required>
+
+    <br><br>
+
+    <label for="username">What's your Devpost username?</label>
+    <a target="_blank" href="https://secure.devpost.com/users/register">[Sign up here]</a><br>
+    <input class="pure-input" name = "username" id="username" placeholder="jonSn0" required>
+
+    <br><br>
+
+    <label for="location">Where are you located?</label><br>
+    <input class="pure-input" name="location" id="location" placeholder="The Wall" required>
+
+    <br><br>
+
+    <p>Record a short video about yourself, your skills, and what you're looking for in a teammate:</p>
+
+    <ziggeo ziggeo-width=400 ziggeo-height=300 ziggeo-limit=180>
+    </ziggeo>
+    <input type="hidden" id = "video" name="video">
+    <button type="button" id="addsuccess" class="button-success pure-button  pure-input-1" style="cursor:text; background:#2ECC40; color:#FFF; display:none;">Video uploaded successfully</button>
+
+    <br>
+
+    <button type="button" id="upload" onclick="store()"class="pure-button pure-button-primary">Upload video</button>
+  </form>
+
+    <button type="button" id="wall" onclick="wall()"class="pure-button pure-button-primary" style="display:none;">GO TO VIDEO WALL</button>
+</div>
+
+</body>

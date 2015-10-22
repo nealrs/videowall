@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <title>Introduce yourself for the EAT Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <link rel="stylesheet" href="//assets-cdn.ziggeo.com/css/ziggeo-v1.css" />
+  <script src="//assets-cdn.ziggeo.com/js/ziggeo-v1.js"></script>
+  <script>ZiggeoApi.token = "4afaff08a206010335585bae22ed3a28";</script>
+  <script>ZiggeoApi.Config.cdn = true;</script>
+  <script>ZiggeoApi.Config.webrtc = true;</script>
+  <script>ZiggeoApi.Config.resumable = true;</script>
+
+
+  <script src ="ICanHaz.min.js"></script>
+  <script id="vid" type="text/html">
+    <ziggeo ziggeo-width=288 ziggeo-height=216 ziggeo-video="{{video}}"></ziggeo>
+    <p>{{name}} <a href="http://devpost.com/{{username}}">({{username}})</a> &middot; {{location}}</p>
+  </script>
+
+  <script>
+    var fb = new Firebase("https://glaring-inferno-8860.firebaseio.com/");
+    var data;
+
+    $(document).ready(function () {
+      fb.child("apps").on("value", function(snapshot) {
+        data = snapshot.val();
+        //console.log(data);
+        for (var k in data) {
+          if (data.hasOwnProperty(k)) {
+            var d = data[k];
+            //console.log(d["name"] +", "+ d["username"] +", "+ d["location"] +", "+ d["video"]);
+            vid = ich.vid(d); $('#vidlist').append(vid);
+          }
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id ="vidlist"></div>
+
+</body>
+</html>

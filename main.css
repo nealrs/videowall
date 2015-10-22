@@ -1,0 +1,101 @@
+body {
+  color:#111111;
+}
+.l-box {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+a {
+  color: #0078e7;
+  text-decoration:none;
+  border-bottom: dotted 1px #0078e7;
+}
+
+a.imga {border:none;}
+
+label {
+  font-weight:bold;
+}
+
+#widget{
+  /*width: 75%;
+  margin: 0 auto;
+  text-align:left;*/
+}
+
+#radios label {
+  text-align: center;
+  padding: 0 0.5em;
+  margin: 0;
+}
+
+#radios img {max-width:100%; }
+
+/* http://stackoverflow.com/questions/17541614/use-thumbnail-image-instead-of-radio-button */
+#radios label > input{ /* HIDE RADIO */
+  display:none;
+}
+#radios label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:3px solid transparent;
+  padding:.5em;
+  opacity:.5;
+}
+#radios label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:3px dotted #0078e7;
+  opacity:1;
+  border-radius:12px;
+}
+
+.bene {
+  font-weight:bold;
+}
+
+.header {
+  background-image: url('header.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  color:#FFF;
+  text-align:center;
+  padding:2em;
+}
+
+.header h1, .header h2{
+  margin:0;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+}
+
+.headrow{
+  background:#f0efed;
+  color:#111111;
+  padding: 2em 1em 1em;
+  margin-bottom:1em;
+}
+
+.footrow{
+  background:#f0efed;
+  color:#111111;
+  padding: 2em 1em 1em;
+}
+
+p {
+  margin-top:0;
+}
+
+.headrow p {margin-bottom:0;}
+
+.bene-icon{
+  float:left;
+  margin-right:8px;
+  color: #A1A09A;
+}
+
+.pure-u-sm-bene-pad {
+  margin-bottom:1em;
+}
+
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
