@@ -1,0 +1,37 @@
+body{
+  background: #eee;
+  color:#111111;
+}
+
+.tileBox{
+  display:flex;
+  flex-wrap:wrap;
+  align-items: stretch;
+}
+.tile{
+  flex:1 0 350px;
+  align-self:stretch;
+  max-width:100%;
+  min-height: 10rem;
+  margin:5px;
+
+
+/*
+  // Min width
+  &:nth-child(2n+3){
+    flex-basis:300px;
+  }
+  &:nth-child(4n+5){
+    flex-basis:450px;
+  }
+  // End Min width
+*/
+
+}
+
+@media screen and(max-width:500px){
+  .tile{
+     flex-basis:100% !important;
+     max-width:100%;
+  }
+}

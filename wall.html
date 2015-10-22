@@ -3,6 +3,9 @@
 <head>
   <title>Introduce yourself for the EAT Challenge</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/wall.css" />
+
   <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
   <link rel="stylesheet" href="//assets-cdn.ziggeo.com/css/ziggeo-v1.css" />
   <script src="//assets-cdn.ziggeo.com/js/ziggeo-v1.js"></script>
@@ -12,10 +15,12 @@
   <script>ZiggeoApi.Config.resumable = true;</script>
 
 
-  <script src ="ICanHaz.min.js"></script>
+  <script src ="js/ICanHaz.min.js"></script>
   <script id="vid" type="text/html">
-    <ziggeo ziggeo-width=288 ziggeo-height=216 ziggeo-video="{{video}}"></ziggeo>
-    <p>{{name}} <a href="http://devpost.com/{{username}}">({{username}})</a> &middot; {{location}}</p>
+    <div class="tile">
+      <ziggeo ziggeo-width=350 ziggeo-height=263 ziggeo-video="{{video}}"></ziggeo>
+      <p>{{name}} <a href="http://devpost.com/{{username}}">({{username}})</a> &middot; {{location}}</p>
+    </div>
   </script>
 
   <script>
@@ -40,9 +45,10 @@
 
 <body>
 
-  <p><a href="http://nealrs.github.io/videowall/upload.html">Add your video introduction.</a></p>
-  
-  <div id ="vidlist"></div>
+  <p><a href="http://nealrs.github.io/videowall/upload.html">Add your own video introduction</a></p>
+
+  <div id="vidlist" class="tileBox">
+  </div>
 
 </body>
 </html>
