@@ -42,7 +42,7 @@
           form.elements["location"].value + " " +
           form.elements["video"].value );
 
-          alert("Thanks! Once your video has been approved, You'll be able to see it on the wall @ http://nealrs.github.io/videowall");
+          //alert("Thanks! Once your video has been approved, You'll be able to see it on the wall @ http://nealrs.github.io/videowall");
 
           document.getElementById('upload').style.display="none";
           document.getElementById('wall').style.display="block";
@@ -67,32 +67,26 @@
     <label for="name">What's your name?</label><br>
     <input class="pure-input" name = "name" id="name" placeholder="Jon Show" required type="text">
 
-    <br><br>
-
     <label for="username">What's your Devpost username?</label>
     <!--<a target="_blank" href="https://secure.devpost.com/users/register">[Sign up here]</a>--><br>
     <input type="text" class="pure-input" name = "username" id="username" placeholder="jonSn0" required>
 
-    <br><br>
-
     <label for="location">Where are you located?</label><br>
     <input type="text" class="pure-input" name="location" id="location" placeholder="The Wall" required>
-
-    <br><br>
 
     <p>Record a short video about yourself, your skills, and what you're looking for in a teammate:</p>
 
     <ziggeo ziggeo-width=400 ziggeo-height=300 ziggeo-limit=180>
     </ziggeo>
     <input type="hidden" id = "video" name="video">
-    <p id="addsuccess" style="cursor:text; color:#77ad39; display:none;">Finished processing video</p>
+    <p id="addsuccess" style="cursor:text; color:#77ad39; display:none;">Video processing complete!</p>
 
     <br>
 
     <a href id="upload" onclick="store()"class="button ">Upload video</button>
   </form>
 
-    <a href id="wall" onclick="wall()"class="button" style="display:none;">GO TO VIDEO WALL</button>
+    <a href id="wall" onclick="wall()"class="button" style="display:none;">Return to video wall</button>
 </div>
 
 </body>

@@ -128,3 +128,38 @@ p {
   padding-left: 1.125em;
   font-size: 1em;
 }
+
+
+input[type="text"] {
+
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background-color: white;
+    font-family: inherit;
+    border: 2px solid #e6e6e6;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: rgba(0,0,0,0.75);
+    display: block;
+    font-size: 1em;
+    margin: 1em 0 1em 0;
+    padding: 0.5em;
+    height: 2.4375em;
+    width: 22rem;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+
+}
+
+input[type="text"]:hover {
+  border-color: #2d9eb2;
+}
+
+/*input[type="text"]:required {
+  border-color: #801c26;
+}*/
