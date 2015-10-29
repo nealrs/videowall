@@ -2,7 +2,6 @@
 
 body {
   color:#111111;
-  background: #eee;
 }
 .l-box {
     padding-left: 1em;
@@ -11,7 +10,6 @@ body {
 a {
   color: #0078e7;
   text-decoration:none;
-  border-bottom: dotted 1px #0078e7;
 }
 
 a.imga {border:none;}
@@ -101,4 +99,31 @@ p {
   -moz-box-shadow:    3px 3px 5px 6px #ccc;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   box-shadow:         3px 3px 5px 6px #ccc;
+}
+
+.button{
+  display: block;
+  background-color: #2d9eb2;
+  border-color: #237a89;
+  color: white;
+  box-shadow: none;
+  border-radius: 2px;
+  transition: all 200ms ease-out;
+  display: inline-block;
+  border-top: style: solid;
+  border-width: 0 0 3px;
+  cursor: pointer;
+  font-family: 'ClearSans', 'HelveticaNeue-Bold', 'Helvetica Neue Bold', sans-serif;
+  font-weight: bold;
+  line-height: normal;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding-top: 0.5625em;
+  padding-right: 1.125em;
+  padding-bottom: 0.625em;
+  padding-left: 1.125em;
+  font-size: 1em;
 }
