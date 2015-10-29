@@ -1,6 +1,7 @@
 body{
   color:#111111;
   max-width:1000px;
+  font-family: 'ClearSans', 'HelveticaNeue-Bold', 'Helvetica Neue Bold', sans-serif;
 }
 
 .tileBox{
